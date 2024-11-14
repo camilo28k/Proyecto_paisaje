@@ -1,0 +1,27 @@
+<div class="my-2 text-left">
+    <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/paisajes/form']">Crear Reseña</button>
+</div>
+
+<div class="card-container">
+    <div class="card" *ngFor="let paisaje of repositorioPaisaje">
+        <div class="card-image">
+            <img src="{{paisaje.url}}" alt="Imagen de paisaje">
+        </div>
+        <div class="card-content">
+            <p><strong>Nombre:</strong> {{paisaje.nombre}}</p>
+            <p><strong>Ubicación:</strong> {{paisaje.ubicacion}}</p>
+            <p><strong>Tipo:</strong> {{paisaje.tipo}}</p>
+            <p><strong>Altitud:</strong> {{paisaje.altitudMax}}</p>
+            <p><strong>Longitud:</strong> {{paisaje.longitud}}</p>
+            <td>
+                  <button type="button" name="editar" [routerLink]="['/paisajes/form', paisaje.id]" class="btn btn-primary">Editar</button>
+                </td>
+                <td>
+                  <button type="button" name="eliminar" (click)="delete(paisaje)" class="btn btn-danger">Eliminar</button>
+                </td>
+        
+        </div>
+    </div>
+</div>
+
+

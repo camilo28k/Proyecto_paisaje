@@ -1,0 +1,58 @@
+<div class="card bg-dark text-white">
+    <div class="card-header">
+        {{titulo}}
+    </div>
+    <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for=" nomPaisaje" class="col-form-label col-sm-2">Nombre del paisaje:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="paisaje.nombre" name=" nombre">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ubicacion" class="col-form-label col-sm-2">ubicacion:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="paisaje.ubicacion" name="ubicacion">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="tipo" class="col-form-label col-sm-2">tipo:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="paisaje.tipo" name="tipo">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="altitud" class="col-form-label col-sm-2">altitud:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="paisaje.altitudMax" name="altitud">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="longitud" class="col-form-label col-sm-2">longitud:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="paisaje.longitud" name="longitud">
+                    </div>
+                </div>              
+
+                <div class="form-group row">
+                    <label for="url" class="col-form-label col-sm-2">FOTOS O IMAGENES:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="paisaje.url" name="url">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                      <button class="btn btn-primary" role="button" (click)="create()" *ngIf="!paisaje.id; else elseBlock">Crear</button>
+                      
+                      <ng-template #elseBlock>
+                        <button class="btn btn-primary" role="button" (click)="update()">Editar</button>
+                      </ng-template>
+                    </div>
+                  </div>
+                  
+                
+            </form>
+    </div>
+</div>
