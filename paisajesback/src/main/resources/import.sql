@@ -1,0 +1,1 @@
+INSERT INTO paisaje (nombre,ubicacion,tipo,altitud,longitud)values ('japón','ASIA','TIPO2',2,2)
